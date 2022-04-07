@@ -54,7 +54,7 @@ body {
   padding-top: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  
+
 }
 
 .modal-form{
@@ -79,7 +79,7 @@ body {
 .nav-bar{
   grid-column: -1/1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-bottom: 64px;
 }
 
@@ -92,7 +92,7 @@ body {
 header,
 section {
   margin-bottom: 80px;
-  margin-top: 64;
+  margin-top: 64px;
 }
 
 h2 {
@@ -127,7 +127,7 @@ h2 {
   font-size: 18px;
   padding: 16px 32px;
   text-align: center ;
-  
+
 }
 
 .btn--small {
@@ -266,12 +266,10 @@ footer {
 }
 .add_to_cart{
   background-color: #f1f3f5;
-  border-radius: 5px;
-  border-bottom-color: #dee2e6;
+    border-bottom-color: #dee2e6;
   border-bottom-width: 5px;
   border-bottom-style: solid;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+    border-radius: 5px 5px 0 0;
 }
 
 .add_to_cart_controls{
@@ -290,7 +288,7 @@ footer {
   border-radius: 20px;
   display: grid;
   align-items: center;
-  
+
 }
 
 .search_books_header{
@@ -364,15 +362,13 @@ footer {
 
 .checkout_list{
   padding: 10px;
-} 
+}
 .checkout_cart{
   background-color: #f1f3f5;
-  border-radius: 5px;
-  border-bottom-color: #dee2e6;
+    border-bottom-color: #dee2e6;
   border-bottom-width: 5px;
   border-bottom-style: solid;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+    border-radius: 5px 5px 0 0;
 }
 
 .number_of_books{
