@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/resources/css/style.css" />
+    <link rel="stylesheet" href="/public/assets/css/style.css" />
     <title>Library</title>
   </head>
   <body>
@@ -53,7 +53,7 @@
         <h2>Most Popular Books</h2>
         <div class="grid-3-cols">
           <figure class="book">
-            <img src="public/img/header.jpg" alt="Book" />
+            <img src="../../public/assets/img/header.jpg" alt="Book" />
             <div class="book-box">
               <h3>Book #1</h3>
               <ul class="book-details">
@@ -81,7 +81,7 @@
           </figure>
 
           <figure class="book">
-            <img src="public/img/comedy.jpg" alt="Book" />
+            <img src="../../public/assets/img/comedy.jpg" alt="Book" />
             <div class="book-box">
               <h3>Book #2</h3>
               <ul class="book-details">
@@ -109,7 +109,7 @@
           </figure>
 
           <figure class="book">
-            <img src="public/img/romance.jpg" alt="Book" />
+            <img src="../../public/assets/img/romance.jpg" alt="Book" />
             <div class="book-box">
               <h3>Book #3</h3>
               <ul class="book-details">
