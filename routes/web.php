@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -10,20 +12,30 @@ use App\Http\Controllers\TestController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create somethinag great!
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/home', function () {
+Route::get('/index', function () {
     return view('index');
 });
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('auth/login', function () {
+    return view('login');
 });
-Route::get('/testDatabase', function () {
-    return view('testDatabase');
+Route::get('auth/register', function () {
+    return view('register');
 });
-Route::post('/test', 'TestController@testProfile');
+Route::get('/bookListing', function () {
+    return view('bookListing');
+});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

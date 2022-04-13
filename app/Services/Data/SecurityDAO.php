@@ -1,15 +1,43 @@
 <?php
 
+/*
+ * ---------------------------------------------------------------
+ * Name      : Group Assignment
+ * Date      : 2022-04-09
+ * Class     : CST-323 Cloud Computing
+ * Professor : Bradley Mauger PhD
+ * Assignment: Milestone
+ * Disclaimer: This is my own work
+ * ---------------------------------------------------------------
+ * Description:
+ * 1. DAO - Security
+ * 2. Authenicate Login
+ * 3.
+ * ---------------------------------------------------------------
+ * Revision History:
+ * Name            Date       Description
+ * --------------- ---------- ------------------------------------
+ * Kelly           2022-04-09 Initial Creation
+ *
+ *
+ * ---------------------------------------------------------------
+ */
+
 namespace App\Services\Data;
-use Illuminate\Support\Collection;
+
 use Illuminate\Support\Facades\DB;
 
-class SecurityDAO {
+class SecurityDAO
+{
+
     public function __construct()
-    { // A constructor//
-    }
-    public function getAllTestUsers(): Collection
+    {}
+
+    public function AuthenicateLogin($email, $password)
     {
-        return DB::table('d9a8fele89gpo6aw.milestone')->get();
+        $exists = DB::select('SELECT COUNT(1) AS AMOUNT FROM users WHERE EMAIL = ? AND PASSWORD = ?', [$email, $password]);
+
+        return ($exists[0]->AMOUNT > 0);
     }
 }
+
