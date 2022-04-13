@@ -7,7 +7,7 @@
                 <div class="col-md-8" style="width: 50%;height: 400px;text-align: left;font-size: 56px;">
                     <div style="margin-top: 20%;">
                         <h1 style="font-size: 56px;text-align: left;font-weight: bold;">Books you are looking for</h1>
-                    </div><button class="btn btn-primary" type="button" style="margin: 14px;background: #087f5b;color: #fff;width: 125px;border-radius: 100px;margin-bottom: 10px;height: 40px;">FIND BOOKS</button>
+                    </div><a class="btn btn-primary ms-auto" type="button" href="/bookListing" style="margin: 14px;background: #087f5b;color: #fff;width: 125px;border-radius: 100px;margin-bottom: 10px;height: 40px;">FIND BOOKS</a>
                 </div>
                 <div class="col-md-4" style="width: 50%;height: 400px;"><img src="{{ asset('img/header.jpg') }}" style="height: 100%;"></div>
             </div>
