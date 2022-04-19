@@ -41,8 +41,11 @@ class BookModel
     private $checkout_date;
     private $return_date;
     private $due_date;
+    private $img;
 
-    public function __construct($id, $title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date)
+
+
+    public function __construct($id, $title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date, $img)
     {
         $this->id = $id;
         $this->title = $title;
@@ -56,6 +59,7 @@ class BookModel
         $this->checkout_date = $checkout_date;
         $this->return_date = $return_date;
         $this->due_date = $due_date;
+        $this->img =$img;
     }
 
     public function available() {
@@ -104,6 +108,10 @@ class BookModel
      * @return mixed
      */
     public function getDate()
+    {
+        return $this->date;
+    }
+    public function getYear()
     {
         return $this->date;
     }
@@ -258,6 +266,21 @@ class BookModel
     public function setDue_date($due_date)
     {
         $this->due_date = $due_date;
+    }
+    /**
+     * @return mixed
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param mixed $img
+     */
+    public function setImg($img): void
+    {
+        $this->img = $img;
     }
 }
 

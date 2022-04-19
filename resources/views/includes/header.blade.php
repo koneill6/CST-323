@@ -1,15 +1,44 @@
-<div>
-    <nav class="navbar navbar-light navbar-expand-md text-end py-3">
-    <div class="container">
-        <div class="collapse navbar-collapse text-end" id="navcol-1">
-            <a class="btn btn-primary ms-auto" type="button" href="/index" style="margin: 0px; background: #087f5b;color: #fff;width: 150px;border-radius: 100px;margin-bottom: 10px;margin-right: 7px;margin-left: 7px;">HOME</a>
-            <a class="btn btn-primary ms-auto" type="button" href="/bookListing"style="margin: 14px;background: #087f5b;color: #fff;width: 150px;border-radius: 100px;margin-bottom: 10px;margin-right: 7px;margin-left: 7px;">BOOKS</a>
-            <a class="btn btn-primary ms-auto" type="button" href="/login" style="margin: 14px;background: #087f5b;color: #fff;width: 150px;border-radius: 100px;margin-bottom: 10px;margin-right: 7px;margin-left: 7px;">SIGN IN</a>
-            <a class="btn btn-primary ms-auto" type="button" href="/register"style="margin: 14px;background: #087f5b;color: #fff;width: 150px;border-radius: 100px;margin-bottom: 10px;margin-right: 7px;margin-left: 7px;">SIGN UP</a>
+<div class="container">
+    <div class="navbar navbar-expand-xl navbar-light">
+        <a href="#" class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="nav--icon"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke="#087f5b"
+                 color="#087f5b"
+                 stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span class="hidden">Book</span>
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse";
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-auto">
+                <li>
+                    <a class="nav-link" href="/index">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/bookListing">Books</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reg-modal">Sign Up</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/login" data-bs-toggle="modal" data-bs-target="#reg-modal-login">Log In</a>
+                </li>
+            </ul>
         </div>
     </div>
-    </nav>
-</div>
-<div style="margin-bottom: 64px"; >
-    <h1 class="text-center" style="color:whitesmoke;background: #087f5b;"><br><strong>CST-323 GROUP 1 LIBRARY</strong><br><br></h1>
 </div>

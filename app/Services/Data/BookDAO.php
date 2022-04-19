@@ -49,9 +49,10 @@ class BookDAO
 		$checkout_date = $bookModel->getCheckout_date();
 		$return_date = $bookModel->getReturn_date();
 		$due_date = $bookModel->getDue_date();
+        $img = $bookModel->getImg();
 
-        $sql = 'INSERT INTO books (TITLE, AUTHOR, PUBLISHER, DATE, GENRE, ISBN, CHECKED_OUT, CHECKOUT_USER_ID, CHECKOUT_DATE, RETURN_DATE, DUE_DATE) ' .
-               'VALUES (?,?,?,?,?,?,?,?,?,?,?)';
+        $sql = 'INSERT INTO books (TITLE, AUTHOR, PUBLISHER, DATE, GENRE, ISBN, CHECKED_OUT, CHECKOUT_USER_ID, CHECKOUT_DATE, RETURN_DATE, DUE_DATE, IMG) ' .
+               'VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
         DB::insert($sql, [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date]);
 
         // Get the id for the book just created
@@ -86,7 +87,8 @@ class BookDAO
 								  $row->CHECKOUT_USER_ID,
 								  $row->CHECKOUT_DATE,
 								  $row->RETURN_DATE,
-								  $row->DUE_DATE);
+								  $row->DUE_DATE,
+                                  $row->IMG);
             $books[$index] = $book;
             ++$index;
         }
@@ -116,7 +118,8 @@ class BookDAO
 								  $row->CHECKOUT_USER_ID,
 								  $row->CHECKOUT_DATE,
 								  $row->RETURN_DATE,
-								  $row->DUE_DATE);
+								  $row->DUE_DATE,
+                                  $row->IMG);
             $books[$index] = $book;
             ++$index;
         }
@@ -139,7 +142,9 @@ class BookDAO
                               $row[0]->CHECKOUT_USER_ID,
                               $row[0]->CHECKOUT_DATE,
                               $row[0]->RETURN_DATE,
-                              $row[0]->DUE_DATE);
+                              $row[0]->DUE_DATE,
+                              $row[0]->IMG);
+
 
         return $book;
     }
@@ -163,9 +168,10 @@ class BookDAO
 		$checkout_date = $bookModel->getCheckout_date();
 		$return_date = $bookModel->getReturn_date();
 		$due_date = $bookModel->getDue_date();
+        $img = $bookModel->getImg();
 
-        $sql = 'UPDATE books SET TITLE = ?, AUTHOR = ?, PUBLISHER = ?, DATE = ?, GENRE = ?, ISBN = ?, CHECKED_OUT = ?, CHECKOUT_USER_ID = ?, CHECKOUT_DATE = ?, RETURN_DATE = ?, DUE_DATE = ? WHERE ID = ?';
-        $data = [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date, $book_id];
+        $sql = 'UPDATE books SET TITLE = ?, AUTHOR = ?, PUBLISHER = ?, DATE = ?, GENRE = ?, ISBN = ?, CHECKED_OUT = ?, CHECKOUT_USER_ID = ?, CHECKOUT_DATE = ?, RETURN_DATE = ?, DUE_DATE = ?, IMG = ? WHERE ID = ?';
+        $data = [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date, $book_id, $img];
         $count = DB::update($sql, $data);
 
         return $count;

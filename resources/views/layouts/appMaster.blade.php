@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 110%;margin: 50px;">
+<html>
     <head>
         @include('includes.head')
-        <title>{{ config('app.name', 'CST 323 Milestone') }}</title>
     </head>
-    <body>
+    <body  min-height="100vh" style="position: relative;">
         <header>
             @include('includes.header')
         </header>
-        @yield('content')
-        <footer style="margin: 50px;">
+        <main style="margin-top:50px; padding-bottom: 5rem;min-height:800px" >
+            @yield('content')
+        </main>
+        <footer class="page-footer dark">
             @include('includes.footer')
-        </footer>>
+        </footer>
         @include("includes.scripts")
     </body>
 </html>
