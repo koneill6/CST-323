@@ -27,137 +27,137 @@ namespace App\Models;
 
 class UserModel
 {
-    private $id;
-    private $firstName;
-    private $lastName;
-    private $userName;
-    private $email;
-    private $password;
-    private $roleId;
-    
-    public function __construct($id, $firstName, $lastName, $userName, $email, $mobile, $password, $roleId)
+    private mixed $id;
+    private mixed $firstName;
+    private mixed $lastName;
+    private mixed $email;
+    private mixed $mobile;
+    private mixed $password;
+    private mixed $roleId;
+
+    public function __construct($id, $firstName, $lastName, $email, $mobile, $password, $roleId)
     {
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
-        $this->userName = $userName;
         $this->email = $email;
         $this->mobile = $mobile;
         $this->password = $password;
         $this->roleId = $roleId;
     }
-    
+
     /**
      * @return mixed
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->id;
     }
-    
-    /**
-     * @return mixed
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-    
-    /**
-     * @return mixed
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-    
-    /**
-     * @return mixed
-     */
-    public function getUserName()
-    {
-        return $this->userName;
-    }
-    
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-    
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-    
-    /**
-     * @return mixed
-     */
-    public function getRoleId()
-    {
-        return $this->roleId;
-    }
-    
+
     /**
      * @param mixed $id
      */
-    public function setId($id)
+    public function setId(mixed $id): void
     {
         $this->id = $id;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName(): mixed
+    {
+        return $this->firstName;
+    }
+
     /**
      * @param mixed $firstName
      */
-    public function setFirstName($firstName)
+    public function setFirstName(mixed $firstName): void
     {
         $this->firstName = $firstName;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getLastName(): mixed
+    {
+        return $this->lastName;
+    }
+
     /**
      * @param mixed $lastName
      */
-    public function setLastName($lastName)
+    public function setLastName(mixed $lastName): void
     {
         $this->lastName = $lastName;
     }
-    
+
     /**
-     * @param mixed $userName
+     * @return mixed
      */
-    public function setUserName($userName)
+    public function getEmail(): mixed
     {
-        $this->userName = $userName;
+        return $this->email;
     }
-    
+
     /**
      * @param mixed $email
      */
-    public function setEmail($email)
+    public function setEmail(mixed $email): void
     {
         $this->email = $email;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getMobile(): mixed
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * @param mixed $mobile
+     */
+    public function setMobile(mixed $mobile): void
+    {
+        $this->mobile = $mobile;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword(): mixed
+    {
+        return $this->password;
+    }
+
     /**
      * @param mixed $password
      */
-    public function setPassword($password)
+    public function setPassword(mixed $password): void
     {
         $this->password = $password;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getRoleId(): mixed
+    {
+        return $this->roleId;
+    }
+
     /**
      * @param mixed $roleId
      */
-    public function setRoleId($roleId)
+    public function setRoleId(mixed $roleId): void
     {
         $this->roleId = $roleId;
     }
+
+
 }
 
-?>

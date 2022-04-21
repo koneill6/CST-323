@@ -3,15 +3,17 @@
     <head>
         @include('includes.head')
     </head>
-    <body  min-height="100vh" style="position: relative;">
+    <body >
         <header>
             @include('includes.header')
         </header>
-        <main style="margin-top:50px; padding-bottom: 5rem;min-height:800px" >
+        <main>
             @yield('content')
         </main>
         <footer class="page-footer dark">
+            <div class="footer">
             @include('includes.footer')
+            </div>
         </footer>
         @include("includes.scripts")
     </body>

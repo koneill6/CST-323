@@ -33,7 +33,7 @@ class SecurityDAO
     public function __construct()
     {}
 
-    public function AuthenicateLogin($email, $password)
+    public function AuthenticateLogin($email, $password): bool
     {
         $exists = DB::select('SELECT COUNT(1) AS AMOUNT FROM users WHERE EMAIL = ? AND PASSWORD = ?', [$email, $password]);
 

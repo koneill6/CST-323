@@ -14,12 +14,14 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps();
-mix.js('resources/js/DataTable---Fully-BSS-Editable.js', 'dist/');
-mix.js('resources/js/Table-With-Search.js', 'dist/').sass('resources/sass/Table-With-Search.scss', 'dist/');
-mix.sass('resources/sass/Black-Navbar.scss', 'dist/');
-mix.sass('resources/sass/Competences-Grid---3-Columns---Hover-Effect-Float-Up.scss', 'dist/');
-mix.sass('resources/sass/Navbar-With-Button.scss', 'dist/');
-mix.sass('resources/sass/styles.scss', 'dist/');
-mix.sass('resources/sass/Table-With-Search-1.scss', 'dist/');
-mix.js('resources/js/Bootstrap-DataTables.js', 'dist/').sass('resources/sass/Bootstrap-DataTables.scss', 'dist/')
+mix.postCss('resources/css/styles.css', 'public/css', [
+    require('postcss-custom-properties')
+]);
+mix.js('resources/js/DataTable---Fully-BSS-Editable.js', 'public/js');
+mix.js('resources/js/Table-With-Search.js', 'public/js').postCss('resources/css/Table-With-Search.css', 'public/css');
+mix.postCss('resources/css/Black-Navbar.css', 'public/css');
+mix.postCss('resources/css/Competences-Grid---3-Columns---Hover-Effect-Float-Up.css', 'public/js');
+mix.postCss('resources/css/Navbar-With-Button.css', 'public/css');
+mix.postCss('resources/css/Table-With-Search-1.css', 'public/css');
+mix.js('resources/js/Bootstrap-DataTables.js', 'public/js').postCss('resources/css/Bootstrap-DataTables.css', 'public/css')
 mix.copyDirectory('resources/fonts', 'public/fonts');

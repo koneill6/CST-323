@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
 
 
 /*
@@ -22,20 +21,25 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 });
-Route::get('auth/login', function () {
-    return view('login');
+Route::get('/login', function () {
+    return view('/auth/login');
 });
-Route::get('auth/register', function () {
-    return view('register');
+Route::get('/loginFailed', function () {
+    return view('/auth/loginFailed');
+});
+Route::get('/register', function () {
+    return view('/auth/register');
 });
 Route::get('/bookListing', function () {
     return view('bookListing');
 });
+Route::get('/landingPage', function () {
+    return view('/customer/landingPage');
+});
+
+Route::post('/registerUser', 'App\Http\Controllers\UserController@registerUser');
+Route::post('/validate', 'App\Http\Controllers\UserController@login');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Auth::routes();
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

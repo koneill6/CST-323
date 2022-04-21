@@ -95,6 +95,24 @@ class BookDAO
 
         return $books;
     }
+    public function getBooksbyUserID(int $id): \Illuminate\Support\Collection
+    {
+        return DB::table('books')->where('CHECKOUT_USER_ID', $id)->get();
+    }
+    public function checkout(int $bookID, int $userID): int
+    {
+        $checkout = now();
+        $checkin = $checkout->addDays(7);
+
+        return DB::table('users')
+            ->where('ID', $bookID)
+            ->update(
+                ['CHECKED_OUT'=>1],
+                ['CHECKOUT_USER_ID'=>$userID],
+                ['CHECKOUT_DATE'=>$checkout],
+                ['DUE_DATE'=>$checkin],
+            );
+    }
 
     public function getBooksSearch($title, $author, $isbn, $genre)
     {

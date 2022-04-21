@@ -113,7 +113,7 @@ class BookModel
     }
     public function getYear()
     {
-        return $this->date;
+        return Carbon::createFromFormat('Y-m-d', $this->date)->format('Y');
     }
 
     /**

@@ -1,5 +1,4 @@
-<div class="container" style="margin-left: 50px%; padding-top: 0px">
-    <div class="navbar navbar-expand-xl navbar-light">
+    <div class="navbar navbar-expand-xl navbar-light" style="margin-left: 50px; padding-top: 0px">
         <a href="#" class="navbar-brand">
             <svg xmlns="http://www.w3.org/2000/svg"
                  class="nav--icon"
@@ -24,19 +23,19 @@
 
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="toggleMobileMenu">
-            <ul class="navbar-nav ms-auto" style="font-size: x-large">
-                <li>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu" >
+            <ul class="navbar-nav ms-auto" style="font-size: x-large;">
+                <li >
                     <a class="nav-link" href="/index">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="/bookListing">Books</a>
+                    <a class="nav-link" href="/bookListing">Cart</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="/register">Sign Up</a>
+                    <a class="nav-link" href="/register">Account</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="/login">Log In</a>
+                    <a class="nav-link" href="/login">Sign Out</a>
                 </li>
             </ul>
         </div>

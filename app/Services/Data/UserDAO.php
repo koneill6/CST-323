@@ -44,14 +44,14 @@ class UserDAO
 
         $firstName = $userModel->getFirstName();
         $lastName  = $userModel->getLastName();
-        $userName  = $userModel->getUserName();
         $email     = $userModel->getEmail();
+        $mobile     = $userModel->getMobile();
         $password  = $userModel->getPassword();
         $roleId   = $userModel->getRoleId();
 
-        $sql = 'INSERT INTO users (FIRSTNAME, LASTNAME, USERNAME, EMAIL, PASSWORD, ROLE_ID) ' .
+        $sql = 'INSERT INTO users (FIRSTNAME, LASTNAME, EMAIL, MOBILE, PASSWORD, ROLE_ID) ' .
                'VALUES (?,?,?,?,?,?)';
-        DB::insert($sql, [$firstName, $lastName, $userName, $email, $password, $roleId]);
+        DB::insert($sql, [$firstName, $lastName, $email, $mobile, $password, $roleId]);
 
         // Get the id for the user just created
         $user_id = DB::getPdo()->lastInsertId();
@@ -80,8 +80,8 @@ class UserDAO
         $user = new UserModel($rows[0]->ID,
                               $rows[0]->FIRSTNAME,
                               $rows[0]->LASTNAME,
-                              $rows[0]->USERNAME,
                               $rows[0]->EMAIL,
+                              $rows[0]->MOBILE,
                               $rows[0]->PASSWORD,
                               $rows[0]->ROLE_ID);
 
@@ -95,8 +95,8 @@ class UserDAO
         $user = new UserModel($rows[0]->ID,
                               $rows[0]->FIRSTNAME,
                               $rows[0]->LASTNAME,
-                              $rows[0]->USERNAME,
                               $rows[0]->EMAIL,
+                              $rows[0]->MOBILE,
                               $rows[0]->PASSWORD,
                               $rows[0]->ROLE_ID);
 

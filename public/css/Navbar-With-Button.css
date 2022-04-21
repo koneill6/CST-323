@@ -39,18 +39,20 @@
 
 .bs-icon.bs-icon-primary-light {
   color: var(--bs-primary);
-  background: rgba(var(--bs-primary-rgb), 0.2);
+  background: rgba(var(--bs-primary-rgb), .2);
 }
 
 .bs-icon.bs-icon-semi-white {
   color: var(--bs-primary);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, .5);
 }
 
 .bs-icon.bs-icon-rounded {
-  border-radius: 0.5rem;
+  border-radius: .5rem;
 }
 
 .bs-icon.bs-icon-circle {
   border-radius: 50%;
 }
+
+
