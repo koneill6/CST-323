@@ -499,3 +499,8 @@ th.table-heading {
     font-size: xxx-large;
     text-align: center;
 }
+#header
+{
+    margin-left:100px;
+    text-align: center;
+}
