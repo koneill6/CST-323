@@ -1,5 +1,5 @@
 @extends('layouts.appMaster')
 @section('title', 'Dashboard')
-@include("includes.bookTable")
-@include("includes.footer")
-@include("includes.scripts")
+@section('content')
+    @include("includes.bookTable")
+@stop
