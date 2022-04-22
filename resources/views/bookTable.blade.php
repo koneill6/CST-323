@@ -8,9 +8,9 @@ $books = $DAO->getAllBooks();
 
 
 <table class="table table-hover table-bordered mt32 book-list table-dashboard">
-    <thead class="text-uppercase bill-header cs thead-dashboard" >
+    <thead class="text-uppercase thead-dashboard" >
     <tr >
-        <th id="trs-hd-6" class="col-lg-2" colspan="6" style="font-size: x-large"><strong>Book Listings</strong></th>
+        <th colspan="6" style="font-size: x-large"><strong>Book Listings</strong></th>
     </tr>
     </thead>
     <tbody>
