@@ -36,10 +36,13 @@ Route::get('/bookListing', function () {
 Route::get('/landingPage', function () {
     return view('/customer/landingPage');
 });
-
+Route::get('/moreInfo', function () {
+    return view('/moreInfo');
+});
 Route::get('/errorPage', function () {
     return view('/customer/errorPage');
 });
+Route::post('/moreInfo', 'App\Http\Controllers\BookController@moreInfo');
 Route::post('/checkout', 'App\Http\Controllers\CartController@checkout');
 Route::post('/addCart', 'App\Http\Controllers\CartController@addCart');
 Route::post('/deleteCart', 'App\Http\Controllers\CartController@deleteCart');

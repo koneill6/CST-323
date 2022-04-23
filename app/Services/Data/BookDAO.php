@@ -96,9 +96,13 @@ class BookDAO
 
         return $books;
     }
-    public function getBooksbyUserID(int $id): \Illuminate\Support\Collection
+    public function getBooksbyUserID(int $id): BookModel
     {
-        return DB::table('books')->where('CHECKOUT_USER_ID', $id)->get();
+        $temp = DB::table('books')->where('CHECKOUT_USER_ID', $id)->get();
+        $temp2 = $temp->first();
+        return new BookModel($temp2->getId(), $temp2->getAuthor(), $temp2->getPublisher(),$temp2->getDate(),$temp2->getGenre(),
+            $temp2->getIsbn(),$temp2->getChecked_out(),$temp2->getCheckout_date(),$temp2->getCheckout_user_id(),
+            $temp2->getCheckout_date(),$temp2->getReturn_date(),$temp2->getdDue_date(),$temp2->getImg());
     }
     public function checkout(int $bookID, int $userID): int
     {
