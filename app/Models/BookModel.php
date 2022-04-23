@@ -171,6 +171,10 @@ class BookModel
     {
         return $this->due_date;
     }
+    public function formatDate($d){
+        return \Carbon\Carbon::createFromFormat('Y-m-d', $d)->format('M d, Y');
+    }
+
 
     /**
      * @param mixed $id

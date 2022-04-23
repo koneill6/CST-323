@@ -90,15 +90,16 @@ class UserDAO
 
     public function getUser($user_id): UserModel
     {
-        $rows = DB::select('SELECT * FROM users WHERE ID = ?', [$user_id]);
-
-        $user = new UserModel($rows[0]->ID,
-                              $rows[0]->FIRSTNAME,
-                              $rows[0]->LASTNAME,
-                              $rows[0]->EMAIL,
-                              $rows[0]->MOBILE,
-                              $rows[0]->PASSWORD,
-                              $rows[0]->ROLE_ID);
+        $rows = DB::table('users')
+                    ->where ('ID', '=', $user_id)->get();
+        $row = $rows->first();
+        $user = new UserModel($row->ID,
+                              $row->FIRSTNAME,
+                              $row->LASTNAME,
+                              $row->EMAIL,
+                              $row->MOBILE,
+                              $row->PASSWORD,
+                              $row->ROLE_ID);
 
         return $user;
     }

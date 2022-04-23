@@ -34,6 +34,7 @@ body {
     width: 48px;
     height: 48px;
     stroke: #087f5b;
+    z-index:100;
 }
 
 .nav-link{
@@ -100,7 +101,28 @@ h2 {
     text-align: center ;
 
 }
-
+.abutton{
+    margin: 14px;
+    background: #087f5b;
+    color: #fff;
+    width: 125px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    height: 40px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.cbutton{
+    margin: 10px;
+    background: #087f5b;
+    color: #fff;
+    width: 175px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    height: 60px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
 .btn--small {
     font-size: 14px;
     padding: 8px 12px;
@@ -217,28 +239,59 @@ footer {
 }
 
 /*Books search page*/
-.search_books_container{
+.grid-container-landingPage{
+    width:100%;
     display: grid;
-    grid-template-columns: 5fr 3fr;
-    grid-template-rows: 1fr 4fr;
-    height: 500px;
+    grid-template-columns: 1.5fr .75fr .75fr;
+    grid-auto-flow: row;
+    height: 800px;
     column-gap: 50px;
     margin-bottom: 96px;
+    background-color: white;
+
+
 }
 
-.available_books{
-    height: 100%;
+.grid-item {
     border-radius: 5px;
     background-color: #f1f3f5;
     box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
 }
-
-.selected_books{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr;
-    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+/*Welcome*/
+.grid-item-1{
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
+.grid-item-3{
+    height:500px;
+}
+.grid-header{
+
+    color: #087f5b;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.grid-item-2{
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.welcome{
+    text-align: center ;
+    background-color: #087f5b;
+    border-radius: 100px;
+    color: #fff;
+    font-weight: bold;
+    font-size: xx-large;
+    text-transform: capitalize;
+}
+/*bookTable*/
+.grid-item-3{
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
 .add_to_cart{
     background-color: #f1f3f5;
     border-radius: 5px;
@@ -258,24 +311,13 @@ footer {
     justify-content: center;
 }
 
-.search_books_bar{
-    grid-column: -1/1;
-    height: 75px;
-    background-color: #087f5b;
-    border-radius: 20px;
-    display: grid;
-    align-items: center;
 
-}
 
 .search_books_header{
     align-items: center;
     margin-bottom: 0;
 }
 
-.books_list{
-    padding: 10px;
-}
 
 .books_list_add{
     padding: 10px;
@@ -314,9 +356,7 @@ footer {
 
 .cart_container{
     display: grid;
-    height: 1000px;
-    column-gap: 50px;
-    margin-bottom: 96px;
+    height: 100%;
 }
 
 .selected_checkout_books{
@@ -429,20 +469,27 @@ footer {
 tbody,th,tr {
     direction:ltr ;
 }
-.item-container {
+.checkout-container {
     display: grid;
-    grid-template-columns: 2fr 5fr 5fr 2fr 5fr 3fr 3fr;
-    margin: 1fr;
+    grid-template-columns: 5fr 4fr 4fr;
+    margin: 2fr;
 }
 .cart-container {
     display: grid;
-    grid-template-columns: 3fr 8fr 5fr 3fr;
-    margin: 1fr;
+    grid-template-columns: 6fr 4fr 2fr;
+    margin: 2fr;
 }
-.ol-dashboard {
+.container-header{
+    font-weight: bolder;
+}
+.container-item{
+    font-size: small;
+    height:50px;
+}
+.grid-dashboard {
     font-size: small;
     width:100%;
-    height:300px;
+    height:100%;
     overflow-x: scroll;
     overflow-y: scroll;
 
@@ -502,5 +549,39 @@ th.table-heading {
 #header
 {
     margin-left:300px;
-    text-align: center;
+    width:100%;
+
 }
+#toggleMobileMenu
+{
+    text-align: right;
+}
+.table-landingPage
+{
+    width: 100%;
+    font-family: Playfair Display;
+    font-weight: bolder;
+    height: 500px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    background-color: #e8eae9;
+    border: 5px solid #d0dad9;
+
+}
+::-webkit-scrollbar-thumb {
+    background-color: #a5d7de;
+    border-left: 5px solid #d0dadb;
+    border-right: 5px solid #d0dadb;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7cadb4;
+}
+::-webkit-scrollbar-track-piece {
+    color: red;
+}
+

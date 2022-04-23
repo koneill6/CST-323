@@ -34,7 +34,10 @@ class UserController extends Controller
         if($DAO->AuthenticateLogin($email, $password)) {
             $UserDAO = new UserDAO();
             $user= $UserDAO->getUserbyEmail($email);
-            $data = ['userID' => $user->getId()];
+
+            $data = ['userID' => $user->getId(),
+                    'firstName' => $user->getFirstName() ,
+                    'lastName' => $user->getLastName()];
             return view('customer.landingPage')->with($data);
         }
         else

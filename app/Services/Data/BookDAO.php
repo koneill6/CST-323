@@ -24,6 +24,7 @@
  */
 
 namespace App\Services\Data;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Models\BookModel;
 
@@ -145,7 +146,7 @@ class BookDAO
         return $books;
     }
 
-    public function getBookByID($book_id)
+    public function getBookByID($book_id): BookModel
     {
         $row = DB::select('SELECT * FROM books WHERE ID = ?', [$book_id]);
 
@@ -194,15 +195,33 @@ class BookDAO
 
         return $count;
     }
+    public function checkoutBook($bookID, $userID)
+    {
+        $checkout = 1;
+        $checkoutDate= Carbon::now();
+        $dueDate = Carbon::now()->addDays(7);
+
+        $affected = DB::table('books')
+            ->where('ID', $bookID)
+            ->update(['CHECKED_OUT' => 1,'CHECKOUT_USER_ID' => $userID, 'CHECKOUT_DATE' => $checkoutDate,
+                    'DUE_DATE' => $dueDate]);
+    }
 
     // -------------------------------------------------------------------
     // Delete Functionality Methods
     // -------------------------------------------------------------------
 
-    public function deleteBook($book_id)
+    public function deleteBook($book_id): int
     {
         $count = DB::delete('DELETE FROM books WHERE ID = ?', [$book_id]);
         return $count;
+    }
+    public function checkedOutBooks($userID): \Illuminate\Support\Collection
+    {
+        return DB::table('books')
+            ->select('TITLE', 'CHECKOUT_DATE', 'DUE_DATE' )
+            ->where ('CHECKOUT_USER_ID', '=', $userID)
+            ->get();
     }
 }
 
