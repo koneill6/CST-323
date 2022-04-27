@@ -71,4 +71,22 @@ class CartController extends Controller
         return view('customer.landingPage')->with($data);
 
     }
+    public function checkIn(Request $request): Factory|View|Application
+    {
+        $bookID = $request->input('bookID');
+        $userID = $request->input('userID');
+        $userDAO = new UserDAO();
+        $user = $userDAO->getUser($userID);
+
+        $cartDAO = new CartDAO();
+        $bookDAO = new BookDAO();
+
+
+
+        $data = ['userID' => $user->getId(),
+            'firstName' => $user->getFirstName() ,
+            'lastName' => $user->getLastName()];
+        return view('customer.landingPage')->with($data);
+
+    }
 }

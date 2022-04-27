@@ -295,6 +295,13 @@ footer {
     grid-row-start: 2;
     grid-row-end: 5;
 }
+.bookTable-button{
+    text-align: center;
+    background: white;
+    padding: 0px;
+    position: relative;
+    z-index: 500;
+}
 
 .add_to_cart{
     background-color: #f1f3f5;
@@ -477,20 +484,37 @@ tbody,th,tr {
 }
 .checkout-container {
     display: grid;
-    grid-template-columns: 5fr 4fr 4fr;
+    grid-template-columns: 4fr 4fr 4fr 4fr;
     margin: 2fr;
+    padding: 2fr;
+
+}
+.checkout-button{
+
+    background: #087f5b;
+    color: #fff;
+    width: 50px;
+    border-radius: 10px;
+    height: 50px;
+    margin:0px;
+
+
 }
 .cart-container {
     display: grid;
     grid-template-columns: 6fr 4fr 2fr;
     margin: 2fr;
+    padding: 2fr;
 }
 .container-header{
     font-weight: bolder;
 }
 .container-item{
+
     font-size: small;
     height:50px;
+    margin: 2fr;
+    padding: 10px;
 }
 .grid-dashboard {
     font-size: small;
@@ -552,7 +576,7 @@ th.table-heading {
     font-size: xxx-large;
     text-align: center;
 }
-#header
+.header
 {
     margin-left:300px;
     width:100%;

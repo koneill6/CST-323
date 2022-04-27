@@ -1,4 +1,4 @@
-<div id= "header">
+<div class= "header">
     <div class="navbar navbar-expand-xl navbar-light">
         <a href="#" class="navbar-brand">
             <svg xmlns="http://www.w3.org/2000/svg"

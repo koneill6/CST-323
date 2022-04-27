@@ -20,10 +20,15 @@ class UserController extends Controller
         $roleID = 1;
 
         $DAO=new UserDAO();
-        $user = new UserModel(0, $firstName, $lastName, $email, $mobile, $password, $roleID);
-        $DAO->createUser($user);
-
-        return view('auth.login');
+        if($DAO->UserEmailAvailable($email)) {
+            $user = new UserModel(0, $firstName, $lastName, $email, $mobile, $password, $roleID);
+            $DAO->createUser($user);
+            return view('auth.login');
+        }
+        else
+        {
+            return view('auth.register')->withErrors(['email' => 'Email already in use - try another.']);
+        }
     }
     public function login(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
@@ -36,13 +41,26 @@ class UserController extends Controller
             $user= $UserDAO->getUserbyEmail($email);
 
             $data = ['userID' => $user->getId(),
-                    'firstName' => $user->getFirstName() ,
-                    'lastName' => $user->getLastName()];
+                'firstName' => $user->getFirstName() ,
+                'lastName' => $user->getLastName()];
             return view('customer.landingPage')->with($data);
         }
         else
             return view('auth.loginFailed');
     }
-                            //    ****************************Customer Controller Methods**********************
+    public function toLandingPage(Request $request): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $userID = $request->input('userID');
+        $DAO = new UserDAO();
+        $user = $DAO->getUser($userID);
+
+
+        $data = ['userID' => $user->getId(),
+            'firstName' => $user->getFirstName(),
+            'lastName' => $user->getLastName()];
+        return view('customer.landingPage')->with($data);
+
+    }
+    //    ****************************Customer Controller Methods**********************
 
 }

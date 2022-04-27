@@ -1,3 +1,4 @@
+<div class = "header">
     <div class="navbar navbar-expand-xl navbar-light" style="margin-left: 50px; padding-top: 0px">
         <a href="#" class="navbar-brand">
             <svg xmlns="http://www.w3.org/2000/svg"
