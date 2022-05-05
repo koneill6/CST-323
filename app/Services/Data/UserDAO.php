@@ -65,6 +65,14 @@ class UserDAO
     // Retrieve Functionality Methods
     // -------------------------------------------------------------------
 
+    // Determine validity of user email - for registration - restrict email to one account only
+    public function UserEmailAvailable($email): bool
+    {
+        $exists = DB::select('SELECT COUNT(1) AS AMOUNT FROM users WHERE EMAIL = ? ', [$email]);
+
+        return ($exists[0]->AMOUNT == 0);
+    }
+
     // Determine validity of user id - does a user exist for the id
     public function UserIDExists($user_id): bool
     {
