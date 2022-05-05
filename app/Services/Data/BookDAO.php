@@ -54,7 +54,7 @@ class BookDAO
 
         $sql = 'INSERT INTO books (TITLE, AUTHOR, PUBLISHER, DATE, GENRE, ISBN, CHECKED_OUT, CHECKOUT_USER_ID, CHECKOUT_DATE, RETURN_DATE, DUE_DATE, IMG) ' .
             'VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
-        DB::insert($sql, [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date]);
+        DB::insert($sql, [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date, $img]);
 
         // Get the id for the book just created
         $book_id = DB::getPdo()->lastInsertId();
@@ -195,7 +195,7 @@ class BookDAO
         $img = $bookModel->getImg();
 
         $sql = 'UPDATE books SET TITLE = ?, AUTHOR = ?, PUBLISHER = ?, DATE = ?, GENRE = ?, ISBN = ?, CHECKED_OUT = ?, CHECKOUT_USER_ID = ?, CHECKOUT_DATE = ?, RETURN_DATE = ?, DUE_DATE = ?, IMG = ? WHERE ID = ?';
-        $data = [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date, $book_id, $img];
+        $data = [$title, $author, $publisher, $date, $genre, $isbn, $checked_out, $checkout_user_id, $checkout_date, $return_date, $due_date, $img, $book_id];
         $count = DB::update($sql, $data);
 
         return $count;
